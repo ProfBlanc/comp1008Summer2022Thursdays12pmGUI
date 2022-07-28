@@ -1,0 +1,16 @@
+#score{
+}
+#gradeText{
+    -fx-font-size: 20px;
+}
+#gradeScore, #layout, #button{
+    -fx-border-color: black;
+    -fx-border-width: 5px;
+    -fx-border-style: solid;
+}
+#button{
+    -fx-background-color: lightgrey;
+}
+.ourLabel{
+    -fx-font-size: 40px;
+}
