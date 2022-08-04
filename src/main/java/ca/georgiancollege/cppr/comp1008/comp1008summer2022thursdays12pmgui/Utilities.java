@@ -9,9 +9,12 @@ public class Utilities {
 
     static Alert createAlert(String alertType, String alertTitle, String alertContent){
         Alert alert;
-
-        if(alertType.toLowerCase().contains("error")){
+        alertType = alertType.toLowerCase();
+        if(alertType.contains("error")){
             alert = new Alert(Alert.AlertType.ERROR);
+        }
+        else if(alertType.contains("info")){
+            alert = new Alert(Alert.AlertType.INFORMATION);
         }
         else{
             alert = new Alert(Alert.AlertType.NONE);

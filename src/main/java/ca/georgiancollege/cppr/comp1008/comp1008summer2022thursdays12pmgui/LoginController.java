@@ -19,6 +19,12 @@ public class LoginController {
     @FXML
     void OnRegisterClick(ActionEvent event) {
 
+        try{
+            Utilities.openWindow("register", "Register Example");
+        }
+        catch (Exception e){
+            Utilities.createAlert("error", "File Error", "Could not load Registration File").show();
+        }
     }
 
     @FXML
@@ -26,16 +32,15 @@ public class LoginController {
 
         model.process(fieldUsername.getText(), fieldPassword.getText());
         Alert alert;
-        if(model.validate()){
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Congrats! You may enter");
-            alert.setTitle("Congrats");
+
+        try {
+            model.validate();
+            alert = Utilities.createAlert("info", "Congrats", "Congrats! You may enter");
         }
-        else{
-            System.err.println("Invalid Username");
-            alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Invalid Username or Password");
-            alert.setTitle("Uh-Oh");
+
+        catch (Exception e){
+            //System.err.println("Invalid Username");
+            alert = Utilities.createAlert("error", "Uh-Oh", e.getMessage());
         }
         alert.show();
     }
