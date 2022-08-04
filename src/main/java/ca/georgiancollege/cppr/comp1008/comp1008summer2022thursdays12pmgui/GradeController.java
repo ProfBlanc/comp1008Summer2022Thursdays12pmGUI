@@ -32,9 +32,7 @@ public class GradeController {
         }
         catch (Exception e){
             //System.err.println(e.getMessage());
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Excuse Me");
-            alert.setContentText(e.getMessage());
+            Alert alert = Utilities.createAlert("error", "Excuse Me", e.getMessage());
             alert.show();
         }
         finally {

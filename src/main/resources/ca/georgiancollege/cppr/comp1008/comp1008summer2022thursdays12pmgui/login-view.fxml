@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.cppr.comp1008.comp1008summer2022thursdays12pmgui.LoginController">
    <children>
       <Label alignment="CENTER" prefWidth="150.0" text="Example Code" textFill="NAVY">
          <VBox.margin>
@@ -27,17 +26,17 @@
             <Insets bottom="30.0" left="250.0" right="250.0" />
          </VBox.margin>
       </Label>
-      <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" promptText="Username">
+      <TextField fx:id="fieldUsername" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="250.0" promptText="Username">
          <VBox.margin>
             <Insets bottom="30.0" left="175.0" right="175.0" />
          </VBox.margin>
       </TextField>
-      <PasswordField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" promptText="Password">
+      <PasswordField fx:id="fieldPassword" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" promptText="Password">
          <VBox.margin>
             <Insets bottom="30.0" left="175.0" right="175.0" />
          </VBox.margin>
       </PasswordField>
-      <Button mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #1DB8DE;" text="Login" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#onLoginClick" prefWidth="150.0" style="-fx-background-color: #1DB8DE;" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -45,7 +44,7 @@
             <Insets bottom="30.0" left="250.0" right="250.0" />
          </VBox.margin>
       </Button>
-      <Button mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #1DB8DE;" text="Register" textFill="WHITE">
+      <Button mnemonicParsing="false" onAction="#OnRegisterClick" prefWidth="150.0" style="-fx-background-color: #1DB8DE;" text="Register" textFill="WHITE">
          <VBox.margin>
             <Insets bottom="30.0" left="250.0" right="250.0" />
          </VBox.margin>
