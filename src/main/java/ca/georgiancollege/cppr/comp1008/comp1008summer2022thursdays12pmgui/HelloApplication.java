@@ -10,13 +10,13 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("welcome-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("guessing-game-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         //stage.setTitle("Our First App!");
         //stage.setTitle("Border Pane Example");
         //stage.setTitle("Login Example");
         //stage.setTitle("Grade Example");
-        stage.setTitle("Welcome Example");
+        stage.setTitle("Guessing Game");
         //stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
