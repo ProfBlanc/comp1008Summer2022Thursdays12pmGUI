@@ -24,7 +24,7 @@
             <Label fx:id="message" layoutX="14.0" layoutY="190.0" prefHeight="170.0" prefWidth="172.0" text="Feedback goes here" />
          </children>
       </Pane>
-      <GridPane fx:id="grid" layoutX="59.0" layoutY="129.0" prefHeight="400.0" prefWidth="632.0">
+      <GridPane fx:id="grid" layoutX="59.0" layoutY="129.0" prefHeight="400.0" prefWidth="632.0" style="-fx-background-color: rgba;">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -38,12 +38,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="105.0" fitWidth="85.0" onMouseClicked="#trackUserClicks" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" onMouseClicked="#trackUserClicks" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
