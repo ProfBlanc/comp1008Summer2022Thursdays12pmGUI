@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,20 +10,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane prefHeight="585.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.cppr.comp1008.comp1008summer2022thursdays12pmgui.GuessingGameController">
+<AnchorPane fx:id="game" prefHeight="585.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.georgiancollege.cppr.comp1008.comp1008summer2022thursdays12pmgui.GuessingGameController">
    <children>
       <Label layoutX="175.0" layoutY="28.0" prefHeight="27.0" prefWidth="251.0" text="Welcome to your guessing game" />
-      <Pane layoutX="728.0" layoutY="82.0" prefHeight="134.0" prefWidth="200.0">
+      <Pane fx:id="stats" layoutX="728.0" layoutY="82.0" prefHeight="380.0" prefWidth="200.0">
          <children>
             <Label layoutX="86.0" layoutY="14.0" text="Stats" />
-            <Label layoutX="17.0" layoutY="52.0" text="Number of guesses" />
-            <Label layoutX="17.0" layoutY="92.0" prefHeight="17.0" prefWidth="103.0" text="Correct guesses" />
-            <Label layoutX="158.0" layoutY="52.0" text="0" />
-            <Label layoutX="150.0" layoutY="92.0" text="0" />
+            <Label layoutX="17.0" layoutY="52.0" text="Attempts" />
+            <Label layoutX="17.0" layoutY="92.0" prefHeight="17.0" prefWidth="103.0" text="Correct" />
+            <Label fx:id="attempts" layoutX="158.0" layoutY="52.0" text="0" />
+            <Label fx:id="correct" layoutX="158.0" layoutY="92.0" text="0" />
+            <Button fx:id="check" layoutX="45.0" layoutY="149.0" mnemonicParsing="false" onAction="#checkSolution" text="Check Solution" />
+            <Label fx:id="message" layoutX="14.0" layoutY="190.0" prefHeight="170.0" prefWidth="172.0" text="Feedback goes here" />
          </children>
       </Pane>
-      <GridPane layoutX="59.0" layoutY="129.0" prefHeight="400.0" prefWidth="632.0">
+      <GridPane fx:id="grid" layoutX="59.0" layoutY="129.0" prefHeight="400.0" prefWidth="632.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -36,12 +38,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" onMouseClicked="#trackUserClicks" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" onMouseClicked="#trackUserClicks" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
@@ -56,62 +58,62 @@
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <ImageView fitHeight="105.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <image>
                   <Image url="@images/guessinggame/blank.png" />
                </image>
